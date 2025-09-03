@@ -1,0 +1,88 @@
+-- put all your codes inside this table
+local codes = {
+    "1GhoulKeyNoMore",
+    "IWantKey",
+    "Online36K",
+    "37KPlayersOn",
+    "38KRecord",
+    "Update13P2",
+    "365KFav",
+    "370KFav",
+    "50K",
+    "160KLikes",
+    "35KCCU",
+    "Shutdown123",
+    "Update13",
+    "155KLikes",
+    "350KFav",
+    "360KFav",
+    "40MVisits",
+    "DungeonFall1",
+    "Update12.5",
+    "31KPlayers",
+    "32KPlayers",
+    "33KPlayers",
+    "150KLikes",
+    "Update12.2",
+    "35MVisits",
+    "140KLikes",
+    "340KFav",
+    "29KPlayers",
+    "30kOnline",
+    "Update12.2Late",
+    "PotionFix1",
+    "25KPlayers",
+    "26KPlayers",
+    "27KPlayers",
+    "28KPlayers",
+    "BugFixSome",
+    "Update12",
+    "Stands",
+    "135KLikes",
+    "32MVisits",
+    "40K",
+    "330KFAV",
+    "Restaurant",
+    "Update11.5",
+    "320KFav",
+    "130KLikes",
+    "30MVisits",
+    "TheEyes",
+    "23KPlayers",
+    "24KPlayers",
+    "WeaponFix",
+    "WhyNotOneMore2",
+    "Update11Small",
+    "22KPlayers",
+    "125KLikes",
+    "315KFav",
+    "WhyNotOneMore",
+    "BugFixUpdate11",
+    "18KPlayers",
+    "19KPlayers",
+    "20KPlayers",
+    "21KPlayers",
+    "Update11",
+    "115KLIKES",
+    "120KLIKES",
+    "310KFAV",
+    "17KPlayers",
+    "UpdateDelay"
+}
+
+-- loop through all codes
+for _, code in ipairs(codes) do
+    local args = {
+        [1] = {
+            Action = "_Redeem_Code",
+            Text = code
+        }
+    }
+
+    game:GetService("ReplicatedStorage")
+        :WaitForChild("Events")
+        :WaitForChild("To_Server")
+        :FireServer(unpack(args))
+
+    task.wait(0.2) -- small delay so it doesn’t spam too fast
+end
