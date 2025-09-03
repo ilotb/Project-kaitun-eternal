@@ -1,0 +1,7 @@
+local args = {
+	{
+		Action = "Achievements",
+		Id = "Total_Energy_I"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
