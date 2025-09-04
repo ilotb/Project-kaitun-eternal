@@ -1,0 +1,31 @@
+
+local list_power = {
+    "Andorid",
+    "Human",
+    "Frost Demon",
+    "Majin",
+    "Half-Saiyan",
+    "Saiyan",
+}
+
+local checklist_power = {}
+
+for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Inventory_1.Hub.Powers.List_Frame.List:GetDescendants()) do
+    if v:FindFirstChild("Inside") and v.Inside:FindFirstChild("Title") then
+        table.insert(checklist_power, v.Inside.Title.Text)
+    end
+end
+
+for _, expected in ipairs(list_power) do
+    local found = false
+    for _, owned in ipairs(checklist_power) do
+        if owned == expected then
+            found = true
+            break
+        end
+    end
+
+    if not found then
+        print("ยังไม่มี: " .. expected)
+    end
+end
