@@ -1,6 +1,7 @@
 kunikiri -80, 16, 534
 yami -198, 16, 511
-rb 9k
+kohan -313, 16, 801
+rb 9k 45k 243k 1.41m 8.75m 57.8m 405m 3b 23.4B 117B
 game:GetService("Players").LocalPlayer.PlayerGui.Upgrades.Upgrade_Rank_Up.Progress.Main.TextLabel
 local args = {
 	{
@@ -16,6 +17,14 @@ local args = {
 		Open_Amount = 1,
 		Action = "_Gacha_Activate",
 		Name = "Dragon_Race"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+local args = {
+	{
+		Upgrading_Name = "Unlock",
+		Action = "_Upgrades",
+		Upgrade_Name = "Saiyan_Evolution_Unlock"
 	}
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
