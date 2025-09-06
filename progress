@@ -1,0 +1,7 @@
+local quest = {"/30","/25","/20","/15","/10","/5"}
+local mon = {"Kri","Ymi","Tian","Kohan","Picco","Koku"}
+for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Quests_Screen.Quest_Side_Menu.Quests.Main.List["1"]:GetChildren()) do
+  if v.Name == "Progress" then
+      v.Text[Value]
+      print(v.Text)
+end end
