@@ -1,0 +1,8 @@
+local args = {
+	{
+		Id = "1",
+		Type = "Complete",
+		Action = "_Quest"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
