@@ -1,0 +1,37 @@
+kunikiri -80, 16, 534
+yami -198, 16, 511
+rb 9k
+game:GetService("Players").LocalPlayer.PlayerGui.Upgrades.Upgrade_Rank_Up.Progress.Main.TextLabel
+local args = {
+	{
+		Upgrading_Name = "Unlock",
+		Action = "_Upgrades",
+		Upgrade_Name = "Dragon_Race_Unlock"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+
+local args = {
+	{
+		Open_Amount = 1,
+		Action = "_Gacha_Activate",
+		Name = "Dragon_Race"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+
+while wait(2) do
+for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Upgrades.Upgrade_Rank_Up.Progress.Main:GetChildren()) do
+    if v:IsA("GuiObject") and v.Name == "Line" and v.AbsoluteSize == Vector2.new(827.826233, 35.2587166) then
+        local args = {
+	{
+		Upgrading_Name = "Rank",
+		Action = "_Upgrades",
+		Upgrade_Name = "Rank_Up"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+
+    end
+end end
+
