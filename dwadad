@@ -1,0 +1,8 @@
+local args = {
+	{
+		Upgrading_Name = "Rank",
+		Action = "_Upgrades",
+		Upgrade_Name = "Rank_Up"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
