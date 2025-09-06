@@ -1,0 +1,49 @@
+local player = game:GetService("Players").LocalPlayer
+local petList = player.PlayerGui.Inventory_1.Hub.Pets.List_Frame.List
+local event = game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Inventory")
+
+-- สีที่ต้องการลบ
+local targetColors = {
+    Color3.new(0.784, 0, 1), -- ม่วง
+    Color3.new(0, 1, 0),     -- ฟ้า
+    Color3.new(0, 1, 1)      -- เขียว
+}
+
+-- เปรียบเทียบสีแบบใกล้เคียง
+local function isColorClose(c1, c2, tol)
+    tol = tol or 0.02
+    return math.abs(c1.R - c2.R) <= tol
+       and math.abs(c1.G - c2.G) <= tol
+       and math.abs(c1.B - c2.B) <= tol
+end
+
+-- ฟังก์ชันลบ
+local function deletePet(petName)
+    local args = {{
+        Selected = {petName},
+        Action = "Mass_Delete",
+        Category = "Pets"
+    }}
+    event:FireServer(unpack(args))
+    print("ลบแล้ว:", petName)
+end
+
+for _, v in pairs(petList:GetChildren()) do
+    local deleted = false
+
+    if v:FindFirstChild("UIGradient") then
+        for _, key in ipairs(v.UIGradient.Color.Keypoints) do
+            for _, target in ipairs(targetColors) do
+                if isColorClose(key.Value, target) then
+                    deletePet(v.Name)
+                    deleted = true
+                    break
+                end
+            end
+            if deleted then break end
+        end
+    else
+        -- ไม่มี UIGradient → ลบทิ้งเลย
+        deletePet(v.Name)
+    end
+end
