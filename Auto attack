@@ -1,1 +1,30 @@
-while wait(.2) do for i,v in pairs(workspace.Debris.Monsters:GetChildren()) do if v:FindFirstChild("HumanoidRootPart") and not (v:GetAttribute("Health") == "100") and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).magnitude < 30 then for i = 1, 10 do local args = { { Id = v.Name, Action = "_Mouse_Click" } } game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args)) end end end end
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local rootPart = character:WaitForChild("HumanoidRootPart")
+local debrisMonsters = workspace.Debris.Monsters
+
+while wait(0.1) do
+    local closestMonster = nil
+    local shortestDistance = math.huge
+
+    for i, v in pairs(debrisMonsters:GetChildren()) do
+        if v:FindFirstChild("HumanoidRootPart") and v:GetAttribute("Health") ~= "100" then
+            local distance = (rootPart.Position - v.HumanoidRootPart.Position).Magnitude
+            if distance < 1000 and distance < shortestDistance then
+                closestMonster = v
+                shortestDistance = distance
+            end
+        end
+    end
+
+    if closestMonster then
+        for i = 1, 5 do
+        local args = {
+            {
+                Id = closestMonster.Name,
+                Action = "_Mouse_Click"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+    end end
+end
