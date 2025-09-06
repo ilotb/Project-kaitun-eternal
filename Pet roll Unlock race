@@ -1,0 +1,18 @@
+for i = 1, 50 do
+local args = {
+	{
+		Open_Amount = 10,
+		Action = "_Stars",
+		Name = "Star_1"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+local args = {
+	{
+		Upgrading_Name = "Unlock",
+		Action = "_Upgrades",
+		Upgrade_Name = "Dragon_Race_Unlock"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+wait(4) end
