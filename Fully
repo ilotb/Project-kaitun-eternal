@@ -19,3 +19,10 @@ while wait(5) do
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/dwadad"))()
 end)
 end)
+--Auto code--
+spawn(function()
+pcall(function()
+while wait(5) do
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20code"))()
+end)
+end)
