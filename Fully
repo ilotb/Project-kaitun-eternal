@@ -5,4 +5,17 @@ spawn(function()
 pcall(function()
 https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Setting
 end) end)
-
+--auto removetrash pet
+spawn(function()
+pcall(function()
+while wait(20) do
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20remove%20pet"))()
+end)
+end)
+---auto rebirt---
+spawn(function()
+pcall(function()
+while wait(5) do
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/dwadad"))()
+end)
+end)
