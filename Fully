@@ -1,1 +1,5 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20attack"))()
+spawn(function()
+pcall(function()
 
+end) end)
