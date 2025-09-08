@@ -1,0 +1,28 @@
+local settings = {
+    {Value = false, Path = {"Settings", "Show_Others_Pets"}},
+    {Value = false, Path = {"Settings", "Show_Stands"}},
+    {Value = false, Path = {"Settings", "Show_Pets"}},
+    {Value = false, Path = {"Settings", "Show_Titans"}},
+    {Value = false, Path = {"Settings", "Show_Auras"}},
+    {Value = false, Path = {"Settings", "Show_Weapons"}},
+    {Value = false, Path = {"Settings", "Show_Accessories"}},
+    {Value = false, Path = {"Settings", "Show_Powers"}},
+    {Value = false, Path = {"Settings", "Visual_Effects"}},
+    {Value = false, Path = {"Settings", "Show_Others_Stands"}},
+    {Value = true,  Path = {"Settings", "Auto_Hourly_Rewards"}},
+    {Value = false, Path = {"Settings", "Show_Others_Titans"}},
+    {Value = true,  Path = {"Settings", "Auto_Daily_Rewards"}},
+}
+
+local event = game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server")
+
+for _, setting in pairs(settings) do
+    local args = {
+        {
+            Value = setting.Value,
+            Path = setting.Path,
+            Action = "Settings"
+        }
+    }
+    event:FireServer(unpack(args))
+end
