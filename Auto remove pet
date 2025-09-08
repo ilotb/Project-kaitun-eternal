@@ -25,7 +25,7 @@ local function deletePet(petName)
         Category = "Pets"
     }}
     event:FireServer(unpack(args))
-    print("ลบแล้ว:", petName)
+    
 end
 
 for _, v in pairs(petList:GetChildren()) do
