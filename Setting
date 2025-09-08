@@ -1,3 +1,10 @@
+local args = {
+	{
+		Action = "_Hourly_Rewards",
+		Id = "All"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
 local settings = {
     {Value = false, Path = {"Settings", "Show_Others_Pets"}},
     {Value = false, Path = {"Settings", "Show_Stands"}},
