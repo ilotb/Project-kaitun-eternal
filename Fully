@@ -1,29 +1,38 @@
---Auto attack --
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20attack"))()
----setting ---
+-- Auto attack
 spawn(function()
-pcall(function()
-https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Setting
-end) end)
---auto removetrash pet
+    pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20attack"))()
+    end)
+end)
+
+-- Setting
 spawn(function()
-pcall(function()
-while wait(20) do
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20remove%20pet"))()
-end
+    pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Setting"))()
+    end)
 end)
-end)
----auto rebirt---
+
+-- Auto remove trash pet
 spawn(function()
-pcall(function()
-while wait(5) do
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/dwadad"))()
-end
+    pcall(function()
+        while wait(20) do
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20remove%20pet"))()
+        end
+    end)
 end)
-end)
---Auto code--
+
+-- Auto rebirth
 spawn(function()
-pcall(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20code"))()
+    pcall(function()
+        while wait(5) do
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/dwadad"))()
+        end
+    end)
 end)
+
+-- Auto code
+spawn(function()
+    pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20code"))()
+    end)
 end)
