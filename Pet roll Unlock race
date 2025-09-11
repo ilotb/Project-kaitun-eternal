@@ -1,4 +1,4 @@
-for i = 1, 50 do
+while wait(1) do
 local args = {
 	{
 		Open_Amount = 10,
