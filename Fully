@@ -46,3 +46,10 @@ spawn(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Roll%20w1"))()
     end)
 end)
+spawn(function()
+    pcall(function()
+        while wait(20) do
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20equip"))()
+        end
+    end)
+end)
