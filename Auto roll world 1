@@ -1,0 +1,19 @@
+while wait(4) do
+local args = {
+	{
+		Open_Amount = 1,
+		Action = "_Gacha_Activate",
+		Name = "Dragon_Race"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+
+local args = {
+	{
+		Open_Amount = 1,
+		Action = "_Gacha_Activate",
+		Name = "Saiyan_Evolution"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+end
