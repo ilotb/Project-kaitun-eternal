@@ -1,0 +1,19 @@
+while wait(60) do
+local args = {
+	{
+		Upgrading_Name = "Unlock",
+		Action = "_Upgrades",
+		Upgrade_Name = "Dragon_Race_Unlock"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+
+local args = {
+	{
+		Upgrading_Name = "Unlock",
+		Action = "_Upgrades",
+		Upgrade_Name = "Saiyan_Evolution_Unlock"
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("To_Server"):FireServer(unpack(args))
+end
