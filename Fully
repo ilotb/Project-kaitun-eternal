@@ -44,7 +44,7 @@ end)
 spawn(function()
     pcall(function()
 while wait(4) do
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Roll%20w1"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20roll%20world%201"))()
    end
 end)
 end)
