@@ -53,3 +53,10 @@ spawn(function()
         end
     end)
 end)
+spawn(function()
+    pcall(function()
+        
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Auto%20farm"))()
+    
+    end)
+end)
