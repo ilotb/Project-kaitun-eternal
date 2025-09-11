@@ -62,3 +62,12 @@ spawn(function()
     
     end)
 end)
+
+spawn(function()
+    pcall(function()
+        
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ilotb/Project-kaitun-eternal/refs/heads/main/Pet%20roll%20Unlock%20race"))()
+    
+    end)
+end)
+
