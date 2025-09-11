@@ -1,0 +1,25 @@
+local Priority = {
+    "rbxassetid://125565704143427",
+    "rbxassetid://78689803221508"
+}
+
+local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local petList = playerGui:WaitForChild("Inventory_1"):WaitForChild("Hub"):WaitForChild("Pets"):WaitForChild("List_Frame"):WaitForChild("List")
+
+for i, v in pairs(petList:GetChildren()) do
+    if v.ClassName == "ImageButton" and v:FindFirstChild("Inside") and v.Inside:FindFirstChild("Icon") then
+        local petImage = v.Inside.Icon.Image
+        -- ตรวจสอบว่าภาพตรงกับ Priority และยังไม่ Equip
+        for _, id in pairs(Priority) do
+            if petImage == id and not v:FindFirstChild("Equipped") then
+                local args = {
+                    {
+                        Action = "Equip_Unequip",
+                        Selected = {v.Name}  -- หรือ {id} ขึ้นกับ server
+                    }
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Inventory"):FireServer(unpack(args))
+            end
+        end
+    end
+end
